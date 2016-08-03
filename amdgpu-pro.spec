@@ -50,13 +50,14 @@ Requires:       %{name}-libopencl-devel%{?_isa} = %{version}-%{release}
 Summary:        This package install amdgpu-pro OpenCL components.
 
 %package core
-Requires:       %{name}-firmware%{?_isa} = %{version}-%{release}
+Requires:       linux-firmware
 Requires:       libdrm-%{name}-amdgpu1%{?_isa} = %{version}-%{release}
 Summary:        This package switchs the GPU stack to amdgpu-pro with basic
 
 %package dkms
 Summary:        amdgpu-pro driver in DKMS format.
-BuildArch: noarch
+BuildArch:      noarch
+Requires:       dkms
 
 %package graphics
 Requires:       %{name}-core%{?_isa} = %{version}-%{release}
